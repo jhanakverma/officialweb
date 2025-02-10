@@ -1,0 +1,518 @@
+/* Background */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Merriweather', serif;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+    position: relative;
+    min-height: 100vh;
+    background: url('Cover.png') no-repeat center center fixed;
+    background-size: cover; /* Ensures the image covers the full screen */
+    overflow-x: hidden;
+}
+
+/* Container for logo and text */
+.front {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: 100vh;
+    z-index: 5;
+}
+
+/* Full-screen pastel section */
+.inspiration {
+    width: 100%;
+    min-height: 300px; /* Full screen height */
+    height: auto;
+    background-color: #e4f2f5; /* Pastel shade */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    transform: translateX(-100%); /* Start from a lower position */
+    opacity: 0;
+    transition: transform 1s ease-out, opacity 1s ease-out;
+}
+
+/* Animation trigger */
+.inspiration.show {
+    transform: translateX(0); /* Bring it to normal position */
+    opacity: 1;
+}
+
+/* Heading styling */
+.inspiration h2 {
+    font-size: 2rem;
+    color: #020e34;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+/* Paragraph styling */
+.inspiration p {
+    font-size: 1.2rem;
+    max-width: 80%;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Animation trigger */
+.inspiration.show {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.learn-more-btn {
+    display: inline-block;
+    font-family: 'Merriweather', serif;
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 600;
+    color: #023261;
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 30px; /* Cylindrical shape */
+    border: 2px solid;
+    position: absolute;
+    bottom: 10px;
+    right: 20px;
+    transition: transform 0.3s ease, text-decoration 0.3s ease;
+}
+
+.learn-more-btn:hover {
+    transform: scale(1.1);
+    text-decoration: underline;
+}
+
+/* Apply only when the Learn More page is open */
+.learn-more-page {
+    background-image: url('learnbg.png'); /* Replace with the actual image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
+.aim-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 8%;
+}
+
+.aim-heading h1 {
+    flex: 1;
+    text-align: left;
+    font-size: 2.8rem;
+    color: #020e34;
+    font-weight: normal;
+    margin-right: 20px;
+}
+
+.goals-container {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    align-items: flex-start;
+}
+
+.goal-box {
+    width: 100%; /* Two in a row */
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    margin: 15px 0;
+    border-radius: 12px;
+    border: 2px solid #152c76; /* Outline effect */
+    transition: all 0.3s ease-in-out;
+    text-align: left;
+}
+
+.goal-box h2 {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: #0d7115;
+    text-align: left;
+    margin-left: 0;
+}
+
+.goal-box h2::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background-color: rgb(12, 125, 19); /* Adjust color */
+    transition: width 0.3s ease-in-out;
+}
+
+.goal-box h2:hover::after {
+    width: 100%; /* Expands underline on hover */
+}
+
+.goal-box p {
+    font-size: 16px;
+    line-height: 1.4;
+    color: #020e34;
+    text-align: left;
+}
+
+.goal-box:hover {
+    transform: scale(1.05); /* Slight zoom-in effect */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); /* Adds shadow */
+}
+
+.bullet {
+    color: #020e34; /* Match heading color */
+    font-size: 24px; /* Adjust size */
+    margin-right: 8px; /* Space between bullet and text */
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .learn-more-page {
+        background-image: url('learnbgportrait.png');
+        background-position: top center; /* Ensures tree remains visible */
+        background-size: cover; /* Keeps image intact without cropping */
+        background-attachment: scroll;
+    }
+
+    .aim-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .goals-container {
+        width: 100%;
+        align-items: center;
+    }
+
+    .goal-box {
+        width: 90%;
+    }
+}
+    
+/* Logo Styling */
+.logo {
+    display: block;
+    margin: 0 auto;
+    width: 200px; /* Adjust size */
+    height: auto;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: transform 0.8s ease-out, opacity 0.8s ease-out;
+}
+
+.logo.show {
+    transform: scale(1);  /* Normal size */
+    opacity: 1;
+}
+
+/* Front Text (Heading + Paragraphs) */
+.front-text {
+    text-align: center;
+    color: #003366;
+    margin-top: 20px; /* Added space below logo */
+}
+
+.front-text h1 {
+    font-family: 'Waterfall', cursive;
+    font-size: 96px;
+    font-weight: normal;
+    margin: 10px 0;
+}
+
+.front-text p {
+    font-size: 24px;
+    line-height: 1;
+    margin: 5px 0;
+}
+
+/* Navigation Bar */
+nav {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    z-index: 10;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 10px; /* Increased space between buttons */
+}
+
+nav ul li {
+    display: inline-block;
+}
+
+/* Cylindrical Buttons */
+nav ul li a {
+    display: inline-block;
+    font-family: 'Merriweather', serif;
+    font-size: 1rem;
+    font-style: italic;
+    font-weight: 600;
+    color: #023261;
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 30px; /* Makes it cylindrical */
+    border: 2px solid #023261;
+    transition: transform 0.3s ease, text-decoration 0.3s ease;
+}
+
+/* Hover Effect: Pop & Underline */
+nav ul li a:hover {
+   transform: scale(1.1);
+   text-decoration: underline;
+   border-bottom: 2px solid #023261;
+}
+
+/* About Us Section */
+#about {
+    padding: 60px 10%;
+    background: #f9f9f9;
+    text-align: center;
+}
+
+/* Main Heading */
+#about h2 {
+    font-size: 2rem;
+    color: #020e34;
+    margin-bottom: 20px;
+    font-weight: normal;
+    margin-top: 40px;
+}
+
+/* About Text */
+.about-container p {
+    font-size: 1.1rem;
+    color: #444444;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: auto;
+    font-style: italic;
+}
+
+/* Mission & Vision Section */
+.mission-vision-container {
+    display: flex;
+    justify-content: center;
+    align-items: stretch; /* Ensures equal height */
+    gap: 20px; /* Space between boxes */
+    flex-wrap: wrap; /* Stacks on smaller screens */
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.mission-vision-box p {
+    font-size: 1.2rem; /* Adjust size as needed */
+    line-height: 1.4;  /* Improves readability */
+    margin-bottom: 15px;
+}
+
+.mission-vision-box ul li {
+    font-size: 1.2rem !important; /* Forces the size change */
+    line-height: 1.4; /* Improves spacing */
+    margin-top: 15px;
+}
+
+.mission-vision-box {
+    flex: 1; /* Equal width for both boxes */
+    min-width: 300px; /* Prevents shrinking too much */
+    max-width: 500px; /* Controls max width */
+    background: transparent;
+    border: 2px solid #023261;
+    border-radius: 15px;
+    padding: 20px;
+    text-align: left;
+    display: flex; /* Flexbox inside the box */
+    flex-direction: column; /* Ensures content flows properly */
+    justify-content: flex-start; /* Makes content align properly */
+    min-height: 250px; /* Ensures equal height */
+    position: relative;
+}
+
+/* Media Query for Small Screens */
+@media (max-width: 768px) {
+    .mission-vision-container {
+        flex-direction: column; /* Stacks the boxes on smaller screens */
+        align-items: center;
+    }
+}
+
+/* Image in Mission Box (Bottom Right) */
+.mission-vision-box.mission::after {
+    content: "";
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    width: 100px;
+    height: 100px;
+    background: url('mandvdesign.png') no-repeat center fixed;
+    background-size: contain;
+    opacity: 1;
+}
+
+/* Flipped Image in Vision Box (Top Left) */
+.mission-vision-box.vision::after {
+    content: "";
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 120px;
+    height: 120px;
+    background: url('mandvdesign.png') no-repeat center fixed;
+    background-size: contain;
+    opacity: 1;
+    transform: scale(-1, -1); /* Flips image horizontally and vertically */
+}
+
+/* List Styling */
+.mission-vision-box ul {
+    text-align: left;
+    padding-left: 20px;
+}
+
+.mission-vision-box li {
+    font-size: 1rem;
+    text-align: left;
+    color: #444;
+    margin: 10px 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .mission-vision {
+        flex-direction: column;
+    }
+
+    .mission, .vision {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+#contact {
+    width: 100%;  /* Full width of the screen */
+    max-width: 100%;
+    padding: 20px 5%;  /* Gives spacing on left & right */
+    background-color: #f4fff6; /* Light Gray Background */
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;  /* Allows wrapping on smaller screens */
+    box-sizing: border-box;
+    gap: 20px;
+}
+
+.contact-logo {
+    flex: 0 0 auto; /* Prevent logo from growing or shrinking */
+}
+
+.contact-logo img {
+    width: 100px; /* Adjust logo size */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.contact-content {
+    flex: 1; /* Take remaining space */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center heading and contact details */
+    gap: 10px; /* Space between heading and contact details */
+}
+
+#contact h2 {
+    font-size: 2rem;
+    color: #35684c; /* Your theme color */
+    margin: 0;
+    text-align: center; /* Aligns heading to left */
+    font-family: 'Merriweather', serif;
+    font-weight: normal;
+    font-style: italic;
+    max-width: 100%;
+    position: relative; /* Needed for positioning the underline */
+    display: inline-block; /* Ensure underline only spans the text */
+}
+
+.underline-image {
+    display: block;
+    width: 100%; /* Full width of the heading */
+    height: 20px; /* Adjust based on your image height */
+    background-image: url('branch.png'); /* Replace with your image */
+    background-size: contain; /* Ensure the image fits */
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    bottom: -10px; /* Adjust based on image height */
+    left: 0;
+    transform: rotate(45deg); /* Rotate the image by 45 degrees */
+    transform-origin: left bottom; /* Rotate from the bottom-left corner */
+}
+
+#contact h2:hover .underline-image {
+    transform: rotate(45deg) scaleX(1.2); /* Optional: Slight zoom effect */
+}
+
+.contact-details {
+    display: flex;
+    justify-content: center;
+    gap: 30px; /* Space between items */
+    flex-wrap: wrap;
+    max-width: 100%;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.2rem;
+    color: #1a7c36;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.contact-gif {
+    width: 40px;  /* Adjust size */
+    height: 40px;
+}
+
+@media (max-width: 768px) {
+    #contact {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .contact-logo {
+        margin-bottom: 15px;
+    }
+
+    #contact h2 {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    
+    .contact-details {
+        justify-content: center;
+        gap: 15px;
+    }
+}
+
