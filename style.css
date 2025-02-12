@@ -112,7 +112,7 @@ body {
 
 /* Apply only when the Learn More page is open */
 .learn-more-page {
-    background-image: url('learnbg.png'); /* Replace with the actual image */
+    background-image: url('learnbg.png') !important; /* Replace with the actual image */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
