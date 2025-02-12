@@ -10,9 +10,8 @@ body {
     align-items: center; /* Center content horizontally */
     position: relative;
     min-height: 100vh;
-    background: url('Cover.png') no-repeat center center fixed;
-    background-size: cover; /* Ensures the image covers the full screen */
     overflow-x: hidden;
+    background: none !important;
 }
 
 /* Container for logo and text */
@@ -26,6 +25,22 @@ body {
     width: 100%;
     height: 100vh;
     z-index: 5;
+    background: url('Cover.png') no-repeat center center/cover; /* Add cover image */
+    background-size: cover;
+}
+
+.tree-image {
+    position: absolute;
+    top: 100vh;
+    left: 0;
+    width: 100%;
+    height: auto;
+    z-index: 10; /* Ensure it's above other content */
+}
+
+.tree-image img {
+    width: 100%; /* Ensure the image is responsive */
+    height: auto;
 }
 
 /* Full-screen pastel section */
@@ -41,9 +56,7 @@ body {
     text-align: center;
     position: relative;
     z-index: 10;
-    transform: translateX(-100%); /* Start from a lower position */
-    opacity: 0;
-    transition: transform 1s ease-out, opacity 1s ease-out;
+    margin-top: 100vh;
 }
 
 /* Animation trigger */
@@ -103,6 +116,8 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     min-height: 100vh;
+    width: 100%; /* Ensure the element covers the full width */
+    z-index: 1; /* Ensure it's above other content */
 }
 
 .aim-container {
@@ -420,6 +435,8 @@ nav ul li a:hover {
     flex-wrap: wrap;  /* Allows wrapping on smaller screens */
     box-sizing: border-box;
     gap: 20px;
+    padding-bottom: 0; /* Remove extra padding */
+    margin-bottom: 0; /* Remove extra margin */
 }
 
 .contact-logo {
@@ -515,4 +532,6 @@ nav ul li a:hover {
         gap: 15px;
     }
 }
+
+
 
