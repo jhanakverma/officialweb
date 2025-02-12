@@ -35,7 +35,8 @@ body {
     left: 0;
     width: 100%;
     height: auto;
-    z-index: 10; /* Ensure it's above other content */
+    bottom: -50px;
+    z-index: 1; /* Ensure it's above other content */
 }
 
 .tree-image img {
@@ -117,34 +118,44 @@ body {
     background-repeat: no-repeat;
     min-height: 100vh;
     width: 100%; /* Ensure the element covers the full width */
-    z-index: 1; /* Ensure it's above other content */
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; /* Center content vertically */
+    text-align: center;
+    padding: 20px;
 }
 
 .aim-container {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 60px 8%;
+    flex-direction: column;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    text-align: center; /* Center text */
+    width: 100%;
+    max-width: 800px; /* Limit width for better readability */
+    margin: 0 auto; /* Center the container */
 }
 
 .aim-heading h1 {
-    flex: 1;
-    text-align: left;
     font-size: 2.8rem;
     color: #020e34;
     font-weight: normal;
-    margin-right: 20px;
+    margin-bottom: 20px;
 }
 
 .goals-container {
     display: flex;
     flex-direction: column;
-    width: 50%;
-    align-items: flex-start;
+    align-items: center; /* Center content horizontally */
+    justify-content: center; /* Center content vertically */
+    text-align: center; /* Center text */
+    width: 100%;
 }
 
 .goal-box {
-    width: 100%; /* Two in a row */
+    width: 90%; /* Two in a row */
     background: rgba(255, 255, 255, 0.1);
     padding: 10px;
     margin: 15px 0;
@@ -208,8 +219,7 @@ body {
     }
 
     .aim-container {
-        flex-direction: column;
-        text-align: center;
+        padding: 20px;
     }
 
     .goals-container {
@@ -532,6 +542,8 @@ nav ul li a:hover {
         gap: 15px;
     }
 }
+
+
 
 
 
