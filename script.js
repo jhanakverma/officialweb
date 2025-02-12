@@ -1,17 +1,17 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Check if the .logo element exists before accessing its classList
+    // Show the logo
     const logo = document.querySelector(".logo");
     if (logo) {
         logo.classList.add("show");
     }
 
-    // Check if the .animated-heading element exists before accessing its classList
+    // Show the animated heading
     const animatedHeading = document.querySelector(".animated-heading");
     if (animatedHeading) {
         animatedHeading.classList.add("show");
     }
 
-    // Check if the .animated-text element exists before accessing its classList
+    // Show the animated text
     const animatedText = document.querySelector(".animated-text");
     if (animatedText) {
         animatedText.classList.add("show");
@@ -21,11 +21,16 @@ document.addEventListener("DOMContentLoaded", function () {
     const inspiration = document.querySelector(".inspiration");
     if (inspiration) {
         window.addEventListener("scroll", () => {
-            let boxPosition = inspiration.getBoundingClientRect().top;
-            let windowHeight = window.innerHeight;
+            const frontSection = document.querySelector(".front");
+            const frontHeight = frontSection.offsetHeight;
+            const scrollPosition = window.scrollY;
 
-            if (boxPosition < windowHeight / 2) {
+            console.log("Scroll Position:", scrollPosition); // Debug scroll position
+            console.log("Front Height:", frontHeight); // Debug front section height
+
+            if (scrollPosition > frontHeight * 0.8) {
                 inspiration.classList.add("show");
+                console.log("Inspiration Section Visible"); // Debug inspiration section visibility
             }
         });
     }
