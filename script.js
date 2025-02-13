@@ -4,26 +4,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Scroll event for inspiration section
     const inspiration = document.querySelector(".inspiration");
-    let lastScrollTop = 0;
-    let scrollSpeed = 0;
+    let hasSlidIn = false; // Flag to track if the section has already slid in
 
     window.addEventListener("scroll", () => {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        scrollSpeed = Math.abs(scrollTop - lastScrollTop); // Calculate scroll speed
-        lastScrollTop = scrollTop;
-
         let boxPosition = inspiration.getBoundingClientRect().top;
         let windowHeight = window.innerHeight;
 
-        if (boxPosition < windowHeight / 2) {
-            // Adjust sliding speed based on scroll speed
-            const slideDistance = Math.min(scrollSpeed * 0.5, 100); // Limit slide distance
-            inspiration.style.transform = `translateX(${slideDistance}%)`;
+        if (!hasSlidIn && boxPosition < windowHeight / 2) {
+            inspiration.style.transform = "translateX(0)";
             inspiration.style.opacity = 1;
-        } else {
-            // Reset if the user scrolls back up
-            inspiration.style.transform = "translateX(-100%)";
-            inspiration.style.opacity = 0;
+            hasSlidIn = true; // Prevent further movement
         }
     });
 });
