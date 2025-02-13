@@ -49,7 +49,6 @@ body {
 .inspiration {
     width: 100%;
     min-height: 300px; /* Full screen height */
-    height: auto;
     background-color: #e4f2f5; /* Pastel shade */
     display: flex;
     flex-direction: column;
@@ -57,8 +56,11 @@ body {
     align-items: center;
     text-align: center;
     position: relative;
-    z-index: 10;
-    margin-top: 100vh;
+    transform: translateX(-100%); /* Start from the left */
+    opacity: 0;
+    transition: transform 1s ease-out, opacity 1s ease-out;
+    z-index: 2; /* Ensure the slider is above the tree */
+    margin-top: 0; /* Start immediately after the tree */
 }
 
 /* Animation trigger */
