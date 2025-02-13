@@ -237,6 +237,7 @@ body {
 @media (max-width: 320px) {
 
     .learn-more-page {
+        background: none;
         background-size: cover; /* Keeps image intact without cropping */
         background-position: bottom;
     }
