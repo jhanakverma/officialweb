@@ -22,14 +22,16 @@ document.addEventListener("DOMContentLoaded", function () {
     if (inspiration) {
         window.addEventListener("scroll", () => {
             const treeImage = document.querySelector(".tree-image");
-            const frontHeight = frontSection.offsetHeight;
+            const treeHeight = treeImage.offsetHeight; // Height of the tree section
             const scrollPosition = window.scrollY;
 
             console.log("Scroll Position:", scrollPosition); // Debug scroll position
-            console.log("Front Height:", frontHeight); // Debug front section height
+            console.log("Tree Height:", treeHeight); // Debug tree section height
 
-            if (scrollPosition > frontHeight * 0.8) {
-                inspiration.classList.add("show")
+            // Trigger the slider effect when the user scrolls past the tree section
+            if (scrollPosition > treeHeight * 0.8) {
+                inspiration.classList.add("show");
+                console.log("Inspiration Section Visible"); // Debug inspiration section visibility
             }
         });
     }
