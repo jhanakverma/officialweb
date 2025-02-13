@@ -92,7 +92,8 @@ body {
     padding: 10px 25px;
     border-radius: 30px; /* Cylindrical shape */
     border: 2px solid;
-    position: absolute;
+    position: relative;
+    z-index: 1;
     bottom: 10px;
     right: 20px;
     transition: transform 0.3s ease, text-decoration 0.3s ease;
