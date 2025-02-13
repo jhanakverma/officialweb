@@ -29,22 +29,6 @@ body {
     background-size: cover;
 }
 
-.tree-image {
-    position: relative;
-    top: 100vh;
-    width: 100%;
-    height: 100vh;
-    bottom: 0;
-    z-index: 1; /* Ensure it's above other content */
-    background:url('treebg.png') no-repeat center center/cover;
-    background-size: cover;
-}
-
-.tree-image img {
-    width: 100%; /* Ensure the image is responsive */
-    height: auto;
-}
-
 /* Full-screen pastel section */
 .inspiration {
     width: 100%;
@@ -69,9 +53,6 @@ body {
 }
 
 @media (max-width: 768px) {
-    .tree-image {
-        height: 50vh; /* Adjust height for smaller screens */
-    }
 
     .inspiration {
         margin-top: 0; /* Remove margin for smaller screens */
