@@ -44,6 +44,8 @@ body {
     transform: translateX(-100%); /* Start from the left */
     opacity: 0;
     transition: transform 1s ease-out, opacity 1s ease-out;
+    scroll-padding-bottom: 50px;
+    overflow: hidden;
 }
 
 /* Animation trigger */
