@@ -58,6 +58,14 @@ body {
 
     .inspiration {
         margin-top: 0; /* Remove margin for smaller screens */
+        padding: 20px;
+    }
+
+    .learn-more-btn {
+        display: block; /* Make it take full width */
+        position: static; /* Remove absolute positioning */
+        margin-top: 20px; /* Add space between paragraph and button */
+        text-align: center;
     }
 }
 
