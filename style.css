@@ -38,6 +38,9 @@ body {
     height: auto;
     bottom: -50px;
     z-index: 1; /* Ensure it's above other content */
+    background-size: cover;
+    background-position: center center;
+    background-repeat: repeat;
 }
 
 .tree-image img {
@@ -49,6 +52,7 @@ body {
 .inspiration {
     width: 100%;
     min-height: 300px; /* Full screen height */
+    height: auto;
     background-color: #e4f2f5; /* Pastel shade */
     display: flex;
     flex-direction: column;
@@ -56,11 +60,8 @@ body {
     align-items: center;
     text-align: center;
     position: relative;
-    transform: translateX(-100%); /* Start from the left */
-    opacity: 0;
-    transition: transform 1s ease-out, opacity 1s ease-out;
-    z-index: 2; /* Ensure the slider is above the tree */
-    margin-top: 0; /* Start immediately after the tree */
+    z-index: 10;
+    margin-top: 100vh;
 }
 
 /* Animation trigger */
@@ -396,12 +397,16 @@ nav ul li a:hover {
     font-size: 1.2rem; /* Adjust size as needed */
     line-height: 1.4;  /* Improves readability */
     margin-bottom: 15px;
+    font-style: italic;
+    color: #444444;
 }
 
 .mission-vision-box ul li {
     font-size: 1.2rem !important; /* Forces the size change */
     line-height: 1.4; /* Improves spacing */
     margin-top: 15px;
+    font-style: italic;
+    color: #444444;
 }
 
 .mission-vision-box {
@@ -544,4 +549,3 @@ nav ul li a:hover {
         gap: 15px;
     }
 }
-
