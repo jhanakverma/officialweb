@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const inspiration = document.querySelector(".inspiration");
     if (inspiration) {
         window.addEventListener("scroll", () => {
-            const frontSection = document.querySelector(".front");
+            const treeImage = document.querySelector(".tree-image");
             const frontHeight = frontSection.offsetHeight;
             const scrollPosition = window.scrollY;
 
@@ -29,8 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log("Front Height:", frontHeight); // Debug front section height
 
             if (scrollPosition > frontHeight * 0.8) {
-                inspiration.classList.add("show");
-                console.log("Inspiration Section Visible"); // Debug inspiration section visibility
+                inspiration.classList.add("show")
             }
         });
     }
