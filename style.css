@@ -236,12 +236,6 @@ body {
 /* Responsive Design */
 @media (max-width: 320px) {
 
-    .learn-more-page {
-        background: none;
-        background-size: cover; /* Keeps image intact without cropping */
-        background-position: bottom;
-    }
-
     .aim-heading h1 {
         font-size: 2rem; /* Smaller font size for smaller screens */
     }
